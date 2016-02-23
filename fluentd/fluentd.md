@@ -19,7 +19,7 @@
 ## 内部構造周り
 * [Flutned Forward Protocol (Draft)](https://gist.github.com/kawanet/078e274952638fd53150)
 
-## イマドキ(2016/02/24時点)の事情を知りたいときに読む
+## イマドキ(Fluentd v0.12時点)の事情を知りたいときに読む
 * [Fluentd v0.12 master guide](http://www.slideshare.net/repeatedly/fluentd-v012-master-guide)
 * [Fluentd v0.12 ラベル機能の使い方とプラグインの改修方法 - Qiita](http://qiita.com/sonots/items/a01d22210b7b059967)
 * [Fluentd v0.12でのFilterとLabel - Go ahead!](http://repeatedly.github.io/ja/2014/08/fluentd-filter-and-label/)
