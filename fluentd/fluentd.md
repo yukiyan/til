@@ -18,7 +18,6 @@
 
 ## 内部構造周り
 * [Flutned Forward Protocol (Draft)](https://gist.github.com/kawanet/078e274952638fd53150)
-* [fluentdでログが欠損する可能性を考える - sonots:blog](http://blog.livedoor.jp/sonots/archives/44690980.html)
 
 ## イマドキ(2016/02/24時点)の事情を知りたいときに読む
 * [Fluentd v0.12 master guide](http://www.slideshare.net/repeatedly/fluentd-v012-master-guide)
@@ -27,6 +26,7 @@
 
 ## エラー周り
 * [Fluentd の out_forward プラグインで良く出る warning メッセージとその負荷対策まとめ - sonots:blog](http://blog.livedoor.jp/sonots/archives/36895001.html)
+* [fluentdでログが欠損する可能性を考える - sonots:blog](http://blog.livedoor.jp/sonots/archives/44690980.html)
 
 ## なんか新しい技術触るときはRelease NotesやChangeLogは全部読むよね
 * [Blog | Fluentd](http://www.fluentd.org/blog/)
@@ -44,6 +44,8 @@
 * [fluentdプラグイン講座](http://toyama0919.bitbucket.org/fluentd_plugin_how_to.html#/)
 * [fluentdのBufferedOutputプラグインを書くときの注意点とか | おそらくはそれさえも平凡な日々](http://www.songmu.jp/riji/entry/2015-01-29-fluent-buffer-plugin.html)
 * [fluentdのためのプラグインをイチから書く手順 - たごもりすメモ](http://tagomoris.hatenablog.com/entry/20111117/1321511988)
+
+## 正規表現の試行錯誤について
 * [Tomohiro/fluentular: Fluentular is a Fluentd regular expression editor](https://github.com/Tomohiro/fluentular)
 
 ## バッファについて
@@ -102,10 +104,6 @@ record_transformerはタグの付け替えが出来ない。labelあるし、tag
 ## タグ設計について
 labelディレクティブを使えばタグを付け替えで消耗せずに済んだりする.
 [Fluentd v0.12 ラベル機能の使い方とプラグインの改修方法 - Qiita](http://qiita.com/sonots/items/a01d2233210b7b059967)
-
-## fluent-logger-rubyとは
-Rubyアプリからfluentdにログ送る。
-[fluent/fluent-logger-ruby](https://github.com/fluent/fluent-logger-ruby)
 
 ## LTSVについて
 
