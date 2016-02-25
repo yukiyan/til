@@ -1,7 +1,7 @@
 ## fluent-catを使ってデバッグする方法
 レコードを書き換えたり、ルーティングがうまくいってるかの確認にはfluent-catをよく使っている。
 
-```rb
+```
 <source>
   @type forward
 </source>
