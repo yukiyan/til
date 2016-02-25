@@ -1,7 +1,7 @@
 ## fluent-catを使ってデバッグする方法
 レコードを書き換えたり、ルーティングがうまくいってるかの確認にはfluent-catをよく使っている。
 
-```
+```rb
 <source>
   @type forward
 </source>
@@ -30,7 +30,7 @@ echo '{"message":"message dayo"}' | /opt/td-agent/embedded/bin/fluent-cat debug
 
 ## テストを実行しながらデバッグする方法
 プラグイン自体の動作確認は`binding.pry`で止めながらテスト実行したりしてる。
-[yukiyan/fluent-plugin-slack](https://github.com/yukiyan/fluent-plugin-slack) を題材に説明してみる。
+[yukiyan/fluent-plugin-slack](https://github.com/yukiyan/fluent-plugin-slack) を題材に説明してみる。  
 [sowawa/fluent-plugin-slack](https://github.com/sowawa/fluent-plugin-slack)からforkしてきて機能を改修したのだが、非常に勉強になった。
 
 ### 合わせて読みたい
@@ -139,7 +139,7 @@ Finished in 0.589185 seconds.
 ```
 
 ### binding.pryを埋め込みながらアレコレ確認する
-```
+```ruby
 😀  [wakayama ♟  ~/src/github.com/yukiyan/fluent-plugin-slack ✘  master ]
 % d
 diff --git a/lib/fluent/plugin/out_slack.rb b/lib/fluent/plugin/out_slack.rb
