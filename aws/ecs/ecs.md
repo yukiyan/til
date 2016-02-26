@@ -7,11 +7,11 @@
 
 ## 競合
 ### フルマネージドサービス
-* GCE
+* [GKE](https://cloud.google.com/container-engine/?hl=ja)
 
 ### 自前運用
-* Docker Swarm
-* Kubernates
+* [Docker Swarm](https://docs.docker.com/swarm/)
+* [Kubernetes](http://kubernetes.io/)
 
 ## 用語
 * [What is Amazon EC2 Container Service? - Amazon EC2 Container Service](http://docs.aws.amazon.com/ja_jp/AmazonECS/latest/developerguide/Welcome.html)
