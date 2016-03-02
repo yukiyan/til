@@ -110,3 +110,9 @@ labelディレクティブを使えばタグを付け替えで消耗せずに済
 * [LTSV FAQ - LTSV って何? どういうところが良いの? - naoyaのはてなダイアリー](http://d.hatena.ne.jp/naoya/20130209/1360381374)
 * [【今北産業】3分で分かるLTSV業界のまとめ【LTSV】 - naoyaのはてなダイアリー](http://d.hatena.ne.jp/naoya/20130207/1360240992)
 * [sonots/ltsv_log_formatter: A ruby logger formatter to output log in LTSV format](https://github.com/sonots/ltsv_log_formatter)
+
+## リトライ時の挙動
+fluentdがリトライすると`2016-03-02 16:21:06 +0900 [warn]: retry succeeded. plugin_id="cloudwatch_logs"`というログが出る。
+https://github.com/fluent/fluentd/blob/master/lib/fluent/output.rb#L344
+
+plugin_idは`@id`で付けたやつなので、やっぱり位置付け的に大事なプラグインには`@id`をちゃんとつけたほうが障害調査時に助かる。
