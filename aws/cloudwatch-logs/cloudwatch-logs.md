@@ -51,3 +51,32 @@ refs
 * [logs — AWS CLI 1.10.1 Command Reference](http://docs.aws.amazon.com/cli/latest/reference/logs/index.html)
 * [Amazon CloudWatch Logs logging driver](https://docs.docker.com/engine/admin/logging/awslogs/)
 * [ryotarai/fluent-plugin-cloudwatch-logs: CloudWatch Logs Plugin for Fluentd](https://github.com/ryotarai/fluent-plugin-cloudwatch-logs)
+* [CloudWatch Alarm/Logs管理ツールを作った / CloudWatch Logsについて - so what](http://so-wh.at/entry/2014/08/13/CloudWatch_Alarm/Logs%E7%AE%A1%E7%90%86%E3%83%84%E3%83%BC%E3%83%AB%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F_/_CloudWatch_Logs%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_)
+  * `aws logs test-metric-filter`便利そう
+
+
+## 制限
+
+>The batch of events must satisfy the following constraints:
+* The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.
+* None of the log events in the batch can be more than 2 hours in the future.
+* None of the log events in the batch can be older than 14 days or the retention period of the log group.
+* The log events in the batch must be in chronological ordered by their timestamp.
+* The maximum number of log events in a batch is 10,000.
+* A batch of log events in a single PutLogEvents request cannot span more than 24 hours. Otherwise, the PutLogEvents operation will fail.
+>>[PutLogEvents - Amazon CloudWatch Logs API Reference](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html)
+
+
+* [CloudWatch Logs Agent の挙動について調べたことのまとめ - Qiita](http://qiita.com/szk3/items/dba1071fb9d344bcd48c)
+  * Agentのことなのでfluentd使う人にとっては関係なさ気だけど、普遍的なことが書かれてる。
+
+## fluent-plugin-cloudwatch-logsについて
+* [ryotarai/fluent-plugin-cloudwatch-logs: CloudWatch Logs Plugin for Fluentd](https://github.com/ryotarai/fluent-plugin-cloudwatch-logs)
+
+今まで見たプラグインの中で一番読みやすかった。
+テストが丁寧で参考になる。
+v0.2.2 で `fluent-mixin-config-placeholders` がサポートされた。
+https://github.com/ryotarai/fluent-plugin-cloudwatch-logs/pull/34
+
+`fluent-mixin-config-placeholders`を使ったほうがいいプラグインいっぱいあるんだけど、このmixinは必須というわけではなく、「あったほうが役立つ場合がある」というものだったので空気感的にPR出していいかよくわからなかった。  
+この事例を参考にして他のプラグインにPR出そうと思った。
