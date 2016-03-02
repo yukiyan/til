@@ -26,7 +26,7 @@ irb(main):008:0> t[:foo]
 [Class: Thread (Ruby 2.2.2)](http://ruby-doc.org/core-2.2.2/Thread.html#method-i-thread_variables)
 
 
-新しく生成したスレッドについてはpush_tagsされておらず、こんな修正(一部改変)をする機会があったのでコードを読んだ。
+新しく生成したスレッドについてはpush_tagsされておらず、こんな修正(一部改変)をする機会があったのでコードを読んだのがきっかけ。
 
 ```diff
 threads << Thread.new do

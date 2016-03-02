@@ -1,4 +1,4 @@
-## チェック監視にひっかかったの通知について
+## チェック監視にひっかかった通知について
 [mackerelio/go-check-plugins/check-log](https://github.com/mackerelio/go-check-plugins/tree/master/check-log)のようなプラグインで発火したアラートだけ特定の通知チャンネルで通知するみたいなことはできない。サービス単位でしかできない。  
 てっきり、「通知対象の監視ルール」で「plugin.checks.xxxx」というような項目が選択できると思ったが、出てこないし、監視ルールとは意味合いが違うようだった。
 
