@@ -1,5 +1,5 @@
 # How long have you (been)...?
-We use the present perfect (especially with how long, for, and since) to talk about something that began in the past and continuesto the present time.
+We use the present perfect (especially with how long, for, and since) to talk about something that began in the past and continues to the present time.
 
 * He has been in the hospital since Monday.
 * Have you known each other for a long time?
