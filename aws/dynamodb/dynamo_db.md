@@ -31,3 +31,6 @@
 * [DynamoDB での制限 - Amazon DynamoDB](http://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/Limits.html)
 * [コンピュータでの DynamoDB の実行 - Amazon DynamoDB](http://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html)
 * [ここにハマった！DynamoDB - Technology Topics by Brains](http://blog.brains-tech.co.jp/entry/2015/09/30/222148)
+* [DynamoDBにおけるテーブル設計 - Qiita](http://qiita.com/naomichi-y/items/eb42491932b46821bb6c)
+* [DynamoDBでのポイントまとめ - Qiita](http://qiita.com/yoskhdia/items/6897f66bdf93017ca033)
+* [DynamoDBいくらかかるの？なにがいいの？RDBじゃだめなの？ - Qiita](http://qiita.com/daikissdd/items/d20449ecbd95bfcdb973)

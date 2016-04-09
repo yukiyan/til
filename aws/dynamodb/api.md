@@ -62,3 +62,55 @@ resp = client.query({
 * [DynamoDBで予約語を使う時は置換しないと怒られる - Qiita](http://qiita.com/kei-sato/items/2b7ae81e757f409fde21)
 
 `ProjectionExpression`は何書けばいいかまだ理解してない。
+
+
+## 制限
+>項目サイズに対する 400 KB の制限があります。項目のサイズは、属性名と値の長さの合計です（バイナリおよび UTF-8 の長さ）
+>> [DynamoDB データモデル - Amazon DynamoDB](http://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/DataModel.html)
+
+
+## DynamoDBの仕様
+* 項目の各属性は、名前と値のペアです。属性はスカラー (単一の値)、JSON ドキュメント、またはセットのいずれかです。
+
+
+```ruby
+client = Aws::DynamoDB::Client.new
+
+# 単純にget
+resp = client.get_item({
+  table_name: 'sample_table',
+  key: {
+    'name': 'yukiyan001',
+    'date': '2016-03-16T04:00:30.860+09:00',
+  },
+})
+
+# 条件式
+# 予約後使ってる場合の回避方法
+resp = client.query({
+  table_name: 'sample_table',
+  expression_attribute_names: {
+    '#date' => 'date',
+  },
+  expression_attribute_values: {
+    ':name': 'yukiyan001',
+    ':date': '2016-03-16T04:00:30.860+09:00',
+  },
+  key_condition_expression: 'name = :name and #date <= :date',
+})
+
+# ソートキーは指定しなくても良い
+resp = client.query({
+  table_name: 'sample_table',
+  expression_attribute_values: {
+    ':name': 'yukiyan001',
+  },
+  key_condition_expression: 'name = :name',
+})
+
+# 射影
+resp = client.scan({
+  table_name: 'sample_table',
+  projection_expression: 'name',
+})
+```
