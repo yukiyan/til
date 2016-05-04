@@ -30,3 +30,6 @@ b.getrow(1).todense()
 v = np.array([1,2,3,4,5])
 a.dot(v)
 # array([  1.,   6.,   0.,  15.,  20.])
+
+## refs
+# * [SciPy — SciPy v0.17.0 Reference Guide](http://docs.scipy.org/doc/scipy/reference/)
