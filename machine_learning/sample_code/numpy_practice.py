@@ -146,10 +146,3 @@ print(np.c_[c,d])
 
 print(np.r_[c,d])
 # [0 1 2 3 4 5]
-
-
-## refs
-# * [NumPy Reference — NumPy v1.10 Manual](http://docs.scipy.org/doc/numpy/reference/)
-# * [Pythonの数値計算ライブラリ NumPy入門 « Rest Term](http://rest-term.com/archives/2999/)
-# * [python/numpy - 機械学習の「朱鷺の杜Wiki」](http://ibisforest.org/index.php?python%2Fnumpy)
-# * [NumPy MedKit](http://mentat.za.net/numpy/numpy_advanced_slides/)
