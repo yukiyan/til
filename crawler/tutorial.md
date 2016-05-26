@@ -20,11 +20,11 @@ tutorial
 ```
 
 ## Itemについて
-cecb18b  
+https://github.com/yukiyan/til/pull/12/commits/cecb18b  
 クロールしたデータをぶち込むコンテナ。Pythonのdictみたいな振る舞いをするイメージ。  
 
 ## Spiderについて
-099e02e  
+https://github.com/yukiyan/til/pull/12/commits/099e02e  
 どのようにクロール処理を施すか定義するクラス。  
 クロール先URL、ドメイン、レスポンスをどうパースしていくかを記述していく。  
 
@@ -33,7 +33,7 @@ cecb18b
 * `parse()` はレスポンスをパースしてItemオブジェクトを返す責務を持ったメソッド。
 
 ## クロールする
-a774183  
+https://github.com/yukiyan/til/pull/12/commits/a774183  
 `$ scrapy crawl dmoz` でSpiderがクロールしにいく。  
 `parse()` に基づいた処理が施される。  
 
