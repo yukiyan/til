@@ -33,6 +33,11 @@ cecb18b
 * `parse()` はレスポンスをパースしてItemオブジェクトを返す責務を持ったメソッド。
 
 ## クロールする
-9d4fb14  
+a774183  
 `$ scrapy crawl dmoz` でSpiderがクロールしにいく。  
 `parse()` に基づいた処理が施される。  
+
+## クロール時の動き
+Scrapyによって `scrapy.http.Request` オブジェクトが `start_urls` の各値に対して生成される。  
+`scrapy.Request` オブジェクトはコールバック関数として `parse()` にアサインされる。  
+`parse()` 後、`scrapy.http.Response` オブジェクトとして返ってくる。  
