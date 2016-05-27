@@ -41,3 +41,44 @@ https://github.com/yukiyan/til/pull/12/commits/a774183
 Scrapyによって `scrapy.http.Request` オブジェクトが `start_urls` の各値に対して生成される。  
 `scrapy.Request` オブジェクトはコールバック関数として `parse()` にアサインされる。  
 `parse()` 後、`scrapy.http.Response` オブジェクトとして返ってくる。  
+
+## セレクタについて
+Scrapyは、[XPathやCSSセレクタ](http://doc.scrapy.org/en/latest/topics/selectors.html#topics-selectors)を使っている。
+XPathの学習は、  
+
+* [XPath 1.0 Tutorial @ZVON.org](http://zvon.org/comp/r/tut-XPath_1.html)
+* [A very brief primer to thinking in XPath // plasmasturm.org](http://plasmasturm.org/log/xpath101/)
+
+が良い。  
+
+ScrapyにはヘルパーとしてSelectrorクラスがあるのでXPathを生で毎回ガッツリ書かなくても良い。  
+
+## XPathの試行錯誤
+IPythonでインタラクティブにXPathを試せる。
+
+```
+% scrapy shell "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/"
+2016-05-27 08:36:30 [scrapy] INFO: Scrapy 1.1.0 started (bot: tutorial)
+
+...
+
+[s] Available Scrapy objects:
+[s]   crawler    <scrapy.crawler.Crawler object at 0x10944d390>
+[s]   item       {}
+[s]   request    <GET http://www.dmoz.org/Computers/Programming/Languages/Python/Books/>
+[s]   response   <200 http://www.dmoz.org/Computers/Programming/Languages/Python/Books/>
+[s]   settings   <scrapy.settings.Settings object at 0x109cace48>
+[s]   spider     <DmozSpider 'dmoz' at 0x10a062d30>
+[s] Useful shortcuts:
+[s]   shelp()           Shell help (print this help)
+[s]   fetch(req_or_url) Fetch request (or URL) and update local objects
+[s]   view(response)    View response in a browser
+
+...
+
+In [1]: response.xpath('//title').extract()
+Out[1]: ['<title>DMOZ - Computers: Programming: Languages: Python: Books</title>']
+
+In [2]: response.xpath('//title/text()').re('(\w+):')
+Out[2]: ['Computers', 'Programming', 'Languages', 'Python']
+```
