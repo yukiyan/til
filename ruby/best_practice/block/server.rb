@@ -26,10 +26,16 @@ class Server
       end
     end
   end
+
+  def self.run(port = 3333, &block)
+    server = Server.new(port)
+    server.instance_eval(&block)
+    server.run
+  end
 end
 
-server = Server.new
-server.handle(/hello/i) { "Hello from server at #{Time.now}" }
-server.handle(/goodbye/i) { "Goodbye from server at #{Time.now}" }
-server.handle(/name is (\w+)/) { |m| "Nice to meet you #{m[1]}!!" }
-server.run
+Server.run do
+  handle(/hello/i) { "Hello from server at #{Time.now}" }
+  handle(/goodbye/i) { "Goodbye from server at #{Time.now}" }
+  handle(/name is (\w+)/) { |m| "Nice to meet you #{m[1]}!!" }
+end
