@@ -31,3 +31,6 @@
 * [EC2 Container Service(ECS)を管理して、Blue-Green Deploymentを実現するツールを書いた - tehepero note(・ω<)](http://blog.stormcat.io/entry/2015/07/22/130000)
 * [production環境でRailsアプリをdockerコンテナとしてECSで運用するために考えたこと - Qiita](http://qiita.com/joker1007/items/b8a932c1ae29705cef8d)
 * [Git プッシュから Amazon ECS に自動デプロイする仕組みを構築する | ORIH](http://orih.io/2015/12/run-automated-deployment-by-git-push-with-ecs-deploy-script/)
+* [aws/amazon-ecs-cli: A custom Amazon ECS CLI that eases up the cluster setup process, enables users to run their applications locally or on ECS using the same Docker Compose file format and familiar Compose commands.](https://github.com/aws/amazon-ecs-cli)
+* [Flexible Blue Green Deploymentのススメ｜サイバーエージェント 公式エンジニアブログ](http://ameblo.jp/principia-ca/entry-12071871177.html)
+* [UbuntuでUpstartを使ってECS Agentをサービス化する - tehepero note(・ω<)](http://blog.stormcat.io/entry/2015/08/27/120000)
