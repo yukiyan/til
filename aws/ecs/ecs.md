@@ -34,3 +34,4 @@
 * [aws/amazon-ecs-cli: A custom Amazon ECS CLI that eases up the cluster setup process, enables users to run their applications locally or on ECS using the same Docker Compose file format and familiar Compose commands.](https://github.com/aws/amazon-ecs-cli)
 * [Flexible Blue Green Deploymentのススメ｜サイバーエージェント 公式エンジニアブログ](http://ameblo.jp/principia-ca/entry-12071871177.html)
 * [UbuntuでUpstartを使ってECS Agentをサービス化する - tehepero note(・ω<)](http://blog.stormcat.io/entry/2015/08/27/120000)
+* [Docker+CoreOSを本番環境に乗せるためにやったこと | nanapi TechBlog](http://blog.nanapi.co.jp/tech/2015/04/10/nanapi_on_docker/)
