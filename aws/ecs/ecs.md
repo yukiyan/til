@@ -35,3 +35,4 @@
 * [Flexible Blue Green Deploymentのススメ｜サイバーエージェント 公式エンジニアブログ](http://ameblo.jp/principia-ca/entry-12071871177.html)
 * [UbuntuでUpstartを使ってECS Agentをサービス化する - tehepero note(・ω<)](http://blog.stormcat.io/entry/2015/08/27/120000)
 * [Docker+CoreOSを本番環境に乗せるためにやったこと | nanapi TechBlog](http://blog.nanapi.co.jp/tech/2015/04/10/nanapi_on_docker/)
+* [AWS Solutions Architect ブログ: Amazon ECS機能追加 - 新しいデプロイ機能、CloudWatchメトリクス、SingaporeとFrankfurtリージョン](http://aws.typepad.com/sajp/2015/12/amazon-ecs-launches-new-deployment-capabilities-cloudwatch-metrics-singapore-and-frankfurt-regions.html)
