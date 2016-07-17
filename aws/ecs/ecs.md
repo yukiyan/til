@@ -25,6 +25,77 @@
 ## 親和性の高いコンテナサービス
 * [Container Partners - Amazon Web Services (AWS)](https://aws.amazon.com/jp/containers/partners/)
 
+# ECSインスタンスを立てる
+## 使ったAMI
+* ami-4aab5d2b
+  * [Launching an Amazon ECS Container Instance - Amazon EC2 Container Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html)
+
+ami-2b08f44aのほうがいいかも。
+
+http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html
+
+## バージョン情報
+
+```
+amzn-ami-2016.03.d-amazon-ecs-optimized - ami-4aab5d2b
+Amazon Linux AMI 2016.03.d x86_64 ECS HVM GP2
+Root device type: ebs Virtualization type: hvm
+```
+
+```
+[ec2-user@ip-172-31-26-66 ~]$ docker version
+Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.3
+ Git commit:   5604cbe/1.11.1
+ Built:
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.3
+ Git commit:   5604cbe/1.11.1
+ Built:
+ OS/Arch:      linux/amd64
+```
+
+## CLIでの設定
+
+```
+aws ecs create-cluster --cluster-name YukiyanCluster
+
+aws ecs describe-clusters --clusters YukiyanCluster
+
+aws ec2 run-instances \
+  --image-id ami-4aab5d2b \
+  --iam-instance-profile Name=ECSClusterRole \
+  --key-name yukiyan-ecs-instance.dfplus.net \
+  --instance-type t2.micro \
+  --key-name yukiyan \
+  --subnet-id subnet-1234 \
+  --security-group-ids sg-1234 \
+  --user-data $(base64 script/ecs_instance_userdata.sh)
+
+aws ec2 create-tags \
+  --tags Key=Name,Value=yukiyan-ecs-instance \
+  --resources i-08b2b1509a3e5e65d
+
+aws deploy create-deployment \
+  --application-name sample_app \
+  --deployment-config-name CodeDeployDefault.OneAtATime \
+  --deployment-group-name yukiyan-ecs-instance \
+  --github-location commitId=1234,repository=yukiyan/sample_app
+```
+
+## Container instance自体のログ
+http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html
+
+## Container instanceをリモートで操作する
+http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ec2-run-command.html
+
+
 ## 関連資料
 * [Amazon EC2 Container Service(ECS)と戯れた1年とコンテナ芸人の来年について - tehepero note(・ω<)](http://stormcat.hatenablog.com/entry/2015/12/21/210000)
 * [Rails アプリの Docker Image ビルドと Amazon EC2 Container Service へのデプロイの自動化 - Atsushi Nagase](https://ja.ngs.io/2015/09/14/ecs-docker-rails/)
